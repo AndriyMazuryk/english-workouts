@@ -1,0 +1,12 @@
+.header {
+    grid-area: header;
+    background: #ffffff;
+    border-bottom: 2px solid #eceff4;
+}
+.header__logo {
+    margin-top: 1.5rem;
+    font-family: var(--main-font);
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000000;
+}
