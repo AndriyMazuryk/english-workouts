@@ -1,6 +1,6 @@
 .navbar {
   grid-area: navbar;
-  background: #ebfbee;
+  background: #fff3bf;
 }
 
 .navbar__menu {
@@ -12,20 +12,25 @@
   justify-content: flex-start;
 }
 
+.navbar .container {
+  border-left: 1px solid #ffec99;
+}
+
 .navbar__item {
   height: 100%;
   padding-left: 1rem;
   padding-right: 1rem;
-  border-right: 1px solid #96f2d7;
+  border-right: 1px solid #ffec99;
   display: flex;
   align-items: center;
 }
-.navbar .container {
-  border-left: 1px solid #96f2d7;
+
+.navbar__item--active {
+  background: #ffec99;
 }
 
 .navbar__item:hover {
-  background: #96f2d7;
+  background: #ffec99;
 }
 
 .navbar__link {

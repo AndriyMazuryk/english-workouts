@@ -1,7 +1,6 @@
 .header {
   grid-area: header;
   background: #ffffff;
-  border-bottom: 1px solid #eceff4;
 }
 
 .header__logo {

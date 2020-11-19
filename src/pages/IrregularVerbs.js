@@ -7,7 +7,7 @@ export default function IrregularVerbs() {
   return (
     <div className="wrapper">
       <Header />
-      <Navbar />
+      <Navbar pageName={'Irregular Verbs'} />
       <main className="main">
         <div className="container">
           <h1>Irregular Verbs</h1>

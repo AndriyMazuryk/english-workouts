@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="wrapper">
       <Header />
-      <Navbar />
+      <Navbar pageName={'Home'} />
       <main className="main">
         <div className="container">
           <h1>Home</h1>
