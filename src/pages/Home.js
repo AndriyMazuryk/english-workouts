@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import { Header, Footer } from '../components'
+import { Header, Navbar, Footer } from '../components'
 
 export default function Home() {
   return (
     <div className="wrapper">
       <Header />
+      <Navbar />
       <main className="main">
         <div className="container">
           <h1>Home</h1>

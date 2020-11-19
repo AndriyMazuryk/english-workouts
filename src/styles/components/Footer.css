@@ -1,8 +1,8 @@
 .footer {
-    grid-area: footer;
-    text-align: center;
-    padding-top: 2rem;
-    font-family: var(--main-font);
-    font-size: 1.6rem;
-    background: #ffffff;
+  grid-area: footer;
+  text-align: center;
+  padding-top: 2rem;
+  font-family: var(--main-font);
+  font-size: 1.6rem;
+  background: #ffffff;
 }

@@ -1,4 +1,5 @@
 @import './components/Header.css';
+@import './components/Navbar.css';
 @import './components/Footer.css';
 
 @import './fonts.css';
@@ -20,9 +21,10 @@ body {
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 6rem 1fr 6rem;
+  grid-template-rows: 6rem 6rem 1fr 6rem;
   grid-template-areas: 
   "header"
+  "navbar"
   "main"
   "footer";
   background: #ffec99;
@@ -31,6 +33,7 @@ body {
 .container {
   max-width: 120rem;
   margin: 0 auto;
+  height: 100%;
 }
 
 .main {

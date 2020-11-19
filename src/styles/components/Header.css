@@ -1,15 +1,17 @@
 .header {
-    grid-area: header;
-    background: #ffffff;
-    border-bottom: 2px solid #eceff4;
+  grid-area: header;
+  background: #ffffff;
+  border-bottom: 1px solid #eceff4;
 }
+
 .header__logo {
-    margin-top: 1.5rem;
+  margin-top: 1.5rem;
 }
+
 .header__link {
-    font-family: var(--main-font);
-    font-size: 2rem;
-    font-weight: bold;
-    color: #000000;
-    text-decoration: none;
+  font-family: var(--main-font);
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000000;
+  text-decoration: none;
 }
