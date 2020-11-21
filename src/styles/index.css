@@ -1,6 +1,8 @@
 @import './components/Header.css';
 @import './components/Navbar.css';
 @import './components/Footer.css';
+@import './components/TestsList.css';
+@import './components/TestItem.css';
 
 @import './fonts.css';
 
