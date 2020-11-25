@@ -9,8 +9,12 @@ export default function IrregularVerbs() {
   const [currentTest, setCurrentTest] = useState('')
 
   const fetchData = async () => {
-    const response = await Axios.get('/irregularVerbsTests.js')
-    setTests(await response.data)
+    try {
+      const { data } = await Axios.get('/irregularVerbsTests.js')
+      setTests(data)
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   useEffect(() => {
