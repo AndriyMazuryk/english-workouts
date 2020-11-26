@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 import { register } from '../redux/actions/user'
 
@@ -51,6 +52,7 @@ export default function Register(props) {
         <input type="password" name="re-password" id="re-password" onChange={e => setRePassword(e.target.value)} />
         <button type="submit">Register</button>
       </form>
+      <Link to="signin">Sign in</Link>
     </div>
   )
 }
