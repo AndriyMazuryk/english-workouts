@@ -42,3 +42,13 @@ body {
   grid-area: main;
   font-family: var(--main-font);
 }
+
+.success {
+  background: green;
+  color: #ffffff;
+}
+
+.danger {
+  background: red;
+  color: #ffffff;
+}

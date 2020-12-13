@@ -1,10 +1,8 @@
-import { combineReducers } from 'redux'
+import { combineReducers } from "redux";
+import auth from "./auth";
+import message from "./message";
 
-import { userRegisterReducer, userSigninReducer } from './user'
-
-const rootReducer = combineReducers({
-    userRegister: userRegisterReducer,
-    userSignin: userSigninReducer
-})
-
-export default rootReducer
+export default combineReducers({
+  auth,
+  message,
+});

@@ -1,19 +1,13 @@
-import { createStore, compose, applyMiddleware } from 'redux'
-import thunk from 'redux-thunk'
-import Cookie from 'js-cookie'
+import { createStore, applyMiddleware } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
+import thunk from "redux-thunk";
+import rootReducer from "./reducers";
 
-import rootReducer from './reducers'
-
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
-
-const userInfo = Cookie.getJSON('userInfo') || null
-
-const initialState = {}
+const middleware = [thunk];
 
 const store = createStore(
-    rootReducer,
-    initialState,
-    composeEnhancers(applyMiddleware(thunk))
-)
+  rootReducer,
+  composeWithDevTools(applyMiddleware(...middleware))
+);
 
-export default store
+export default store;
