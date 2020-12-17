@@ -1,13 +1,9 @@
 import React, { useEffect } from "react";
-import {
-  Switch,
-  Route,
-  useLocation,
-} from "react-router-dom";
+import { Switch, Route, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 import { Home, IrregularVerbs, Register, Login } from "./pages";
-import { Header, Navbar, Footer } from "./components";
+import { Header, Navbar, Main, Footer } from "./components";
 
 import { clearMessage } from "./redux/actions/message";
 
@@ -24,12 +20,14 @@ export default function App() {
       <Header />
       <Navbar />
 
-      <Switch>
-        <Route exact path={["/", "/home"]} component={Home} />
-        <Route exact path="/irregular-verbs" component={IrregularVerbs} />
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/login" component={Login} />
-      </Switch>
+      <Main>
+        <Switch>
+          <Route exact path={["/", "/home"]} component={Home} />
+          <Route exact path="/irregular-verbs" component={IrregularVerbs} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/login" component={Login} />
+        </Switch>
+      </Main>
 
       <Footer />
     </div>

@@ -21,21 +21,19 @@ const Header = () => {
               English Workouts
             </Link>
           </div>
-          <div className="header__user-info">
-            {currentUser ? (
-              <div className="header__account">
-                <Link to="/profile">{currentUser.username}</Link>
-                <Link to="/login" onClick={logOut}>
-                  LogOut
-                </Link>
-              </div>
-            ) : (
-              <div className="header__auth">
-                <Link to="/register">Register</Link>
-                <Link to="/login">Login</Link>
-              </div>
-            )}
-          </div>
+          {currentUser ? (
+            <div className="header__account">
+              <Link to="/profile">{currentUser.username}</Link>
+              <Link to="/login" onClick={logOut}>
+                LogOut
+              </Link>
+            </div>
+          ) : (
+            <div className="header__account">
+              <Link to="/register" className="header__link">Register</Link>
+              <Link to="/login" className="header__link">Login</Link>
+            </div>
+          )}
         </div>
       </div>
     </header>

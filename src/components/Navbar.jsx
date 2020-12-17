@@ -23,7 +23,7 @@ const Navbar = () => {
               })}
             >
               <Link className="navbar__link" to={item.link}>
-                {item.name}
+                <div>{item.name}</div>
               </Link>
             </li>
           ))}

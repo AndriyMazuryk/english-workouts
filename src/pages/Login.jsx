@@ -11,7 +11,7 @@ import { login } from "../redux/actions/auth";
 const required = (value) => {
   if (!value) {
     return (
-      <div className="danger" role="alert">
+      <div className="danger message" role="alert">
         This field is required!
       </div>
     );
@@ -57,51 +57,60 @@ const Login = (props) => {
   }
 
   return (
-    <div>
-      <div className="container">
-        <Form onSubmit={handleLogin} ref={form}>
-          <div className="form-group">
-            <label htmlFor="email">Email:</label>
+    <>
+      <h3 className="page-title">Log In</h3>
+      <Form onSubmit={handleLogin} ref={form} className="form">
+        <div className="form__wrapper">
+          {message && (
+            <div className="form__group">
+              <div className="danger message" role="alert">
+                {message}
+              </div>
+            </div>
+          )}
+
+          <div className="form__group">
+            <label htmlFor="email" className="form__label">
+              Email
+            </label>
             <Input
               type="email"
               name="email"
               id="email"
               value={email}
+              className="form__input"
               onChange={(e) => setEmail(e.target.value)}
               validations={[required]}
             />
           </div>
 
-          <div className="form-group">
-            <label htmlFor="password">Password:</label>
+          <div className="form__group">
+            <label htmlFor="password" className="form__label">
+              Password
+            </label>
             <Input
               type="password"
               name="password"
               id="password"
               value={password}
+              className="form__input"
               onChange={(e) => setPassword(e.target.value)}
               validations={[required]}
             />
           </div>
 
-          <div className="form-group">
-            <button type="submit" disabled={loading}>
+          <div className="form__group form__group--vertical">
+            <button type="submit" disabled={loading} className="form__button">
               Sign in
             </button>
+            <Link to="/register" className="form__link">
+              Register
+            </Link>
           </div>
-
-          {message && (
-            <div className="form-group">
-              <div className="danger" role="alert">
-                {message}
-              </div>
-            </div>
-          )}
-          <CheckButton style={{ display: "none" }} ref={checkBtn} />
-        </Form>
-        <Link to="/register">Register</Link>
-      </div>
-    </div>
+        </div>
+        <CheckButton style={{ display: "none" }} ref={checkBtn} />
+      </Form>
+    </>
   );
 };
 

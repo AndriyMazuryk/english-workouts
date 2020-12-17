@@ -1,54 +1,52 @@
-@import './components/Header.css';
-@import './components/Navbar.css';
-@import './components/Footer.css';
-@import './components/TestsList.css';
-@import './components/TestItem.css';
-
-@import './fonts.css';
+@import "./components/Header.css";
+@import "./components/Navbar.css";
+@import "./components/Footer.css";
+@import "./components/TestsList.css";
+@import "./components/TestItem.css";
+@import "./form.css";
+@import "./message.css";
+@import "./fonts.css";
 
 :root {
-  --main-font: 'Play', sans-serif;
+  --main-font: "Play", sans-serif;
 }
-
+* {
+  box-sizing: border-box;
+}
 html {
   font-size: 10px;
 }
-
 body {
   margin: 0;
   padding: 0;
 }
-
 .wrapper {
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 6rem 6rem 1fr 6rem;
-  grid-template-areas: 
-  "header"
-  "navbar"
-  "main"
-  "footer";
+  grid-template-rows: 6rem 6rem auto 6rem;
+  /* grid-auto-rows: minmax(6rem, auto); */
+  grid-template-areas:
+    "header"
+    "navbar"
+    "main"
+    "footer";
   background: #ffec99;
 }
-
 .container {
   max-width: 120rem;
   margin: 0 auto;
   height: 100%;
 }
-
+.inner-container {
+  padding: 3rem 0;
+}
 .main {
   grid-area: main;
   font-family: var(--main-font);
 }
-
-.success {
-  background: green;
-  color: #ffffff;
-}
-
-.danger {
-  background: red;
-  color: #ffffff;
+.page-title {
+  text-align: center;
+  font-size: 3rem;
+  margin: 0;
 }

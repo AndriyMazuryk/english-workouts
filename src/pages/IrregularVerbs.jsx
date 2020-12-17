@@ -21,15 +21,13 @@ const IrregularVerbs = () => {
   }, []);
 
   return (
-    <main className="main">
-      <div className="container">
-        {Number.isInteger(currentTest) ? (
-          <Test test={tests[currentTest]} setCurrentTest={setCurrentTest} />
-        ) : (
-          <TestsList tests={tests} setCurrentTest={setCurrentTest} />
-        )}
-      </div>
-    </main>
+    <>
+      {Number.isInteger(currentTest) ? (
+        <Test test={tests[currentTest]} setCurrentTest={setCurrentTest} />
+      ) : (
+        <TestsList tests={tests} setCurrentTest={setCurrentTest} />
+      )}
+    </>
   );
 };
 

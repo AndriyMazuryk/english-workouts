@@ -7,12 +7,14 @@ import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 import { isEmail } from "validator";
 
+import classNames from "classnames";
+
 import { register } from "../redux/actions/auth";
 
 const required = (value) => {
   if (!value) {
     return (
-      <div className="danger" role="alert">
+      <div className="danger message" role="alert">
         This field is required!
       </div>
     );
@@ -22,7 +24,7 @@ const required = (value) => {
 const validEmail = (value) => {
   if (!isEmail(value)) {
     return (
-      <div className="danger" role="alert">
+      <div className="danger message" role="alert">
         This is not a valid email.
       </div>
     );
@@ -32,7 +34,7 @@ const validEmail = (value) => {
 const vusername = (value) => {
   if (value.length < 3 || value.length > 20) {
     return (
-      <div className="danger" role="alert">
+      <div className="danger message" role="alert">
         The username must be between 3 and 20 characters.
       </div>
     );
@@ -42,7 +44,7 @@ const vusername = (value) => {
 const vpassword = (value) => {
   if (value.length < 6 || value.length > 40) {
     return (
-      <div className="danger" role="alert">
+      <div className="danger message" role="alert">
         The password must be between 6 and 40 characters.
       </div>
     );
@@ -84,71 +86,92 @@ const Register = () => {
   };
 
   return (
-    <div>
-      <div className="container">
-        <Form onSubmit={handleRegister} ref={form}>
-          {!successful && (
-            <div>
-              <div className="form-group">
-                <label htmlFor="name">Name:</label>
-                <Input
-                  type="text"
-                  name="name"
-                  id="name"
-                  onChange={(e) => setUsername(e.target.value)}
-                  validations={[required, vusername]}
-                />
+    <>
+      <h3 class="page-title">Registration</h3>
+      <Form onSubmit={handleRegister} ref={form} className="form">
+        {!successful && (
+          <div className="form__wrapper">
+            {message && (
+              <div
+                className={classNames({
+                  success: successful,
+                  danger: !successful,
+                  message: true,
+                })}
+              >
+                Message: {message}
               </div>
-
-              <div className="form-group">
-                <label htmlFor="email">Email:</label>
-                <Input
-                  type="email"
-                  name="email"
-                  id="email"
-                  onChange={(e) => setEmail(e.target.value)}
-                  validations={[required, validEmail]}
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="password">Passowrd</label>
-                <Input
-                  type="password"
-                  name="password"
-                  id="password"
-                  onChange={(e) => setPassword(e.target.value)}
-                  validations={[required, vpassword]}
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="re-password">Re-Password:</label>
-                <Input
-                  type="password"
-                  name="re-password"
-                  id="re-password"
-                  onChange={(e) => setRePassword(e.target.value)}
-                  validations={[required, vpassword]}
-                />
-              </div>
-
-              <div className="form-group">
-                <button type="submit">Register</button>
-              </div>
+            )}
+            <div className="form__group">
+              <label htmlFor="name" className="form__label">
+                Name
+              </label>
+              <Input
+                type="text"
+                name="name"
+                id="name"
+                className="form__input"
+                onChange={(e) => setUsername(e.target.value)}
+                validations={[required, vusername]}
+              />
             </div>
-          )}
 
-          {message && (
-            <div className={successful ? "success" : "danger"}>
-              Message: {message}
+            <div className="form__group">
+              <label htmlFor="email" className="form__label">
+                Email
+              </label>
+              <Input
+                type="email"
+                name="email"
+                id="email"
+                className="form__input"
+                onChange={(e) => setEmail(e.target.value)}
+                validations={[required, validEmail]}
+              />
             </div>
-          )}
-          <CheckButton style={{ display: "none" }} ref={checkBtn} />
-        </Form>
-        <Link to="/login">Login</Link>
-      </div>
-    </div>
+
+            <div className="form__group">
+              <label htmlFor="password" className="form__label">
+                Password
+              </label>
+              <Input
+                type="password"
+                name="password"
+                id="password"
+                className="form__input"
+                onChange={(e) => setPassword(e.target.value)}
+                validations={[required, vpassword]}
+              />
+            </div>
+
+            <div className="form__group">
+              <label htmlFor="re-password" className="form__label">
+                Re-Password
+              </label>
+              <Input
+                type="password"
+                name="re-password"
+                id="re-password"
+                className="form__input"
+                onChange={(e) => setRePassword(e.target.value)}
+                validations={[required, vpassword]}
+              />
+            </div>
+
+            <div className="form__group form__group--vertical">
+              <button type="submit" className="form__button">
+                Register
+              </button>
+              <Link to="/login" className="form__link">
+                Login
+              </Link>
+            </div>
+          </div>
+        )}
+
+        <CheckButton style={{ display: "none" }} ref={checkBtn} />
+      </Form>
+    </>
   );
 };
 

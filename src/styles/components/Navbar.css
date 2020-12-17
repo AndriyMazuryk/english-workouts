@@ -2,7 +2,6 @@
   grid-area: navbar;
   background: #fff3bf;
 }
-
 .navbar__menu {
   height: 100%;
   list-style: none;
@@ -11,11 +10,9 @@
   display: flex;
   justify-content: flex-start;
 }
-
 .navbar .container {
   border-left: 1px solid #ffec99;
 }
-
 .navbar__item {
   height: 100%;
   padding-left: 1rem;
@@ -23,18 +20,18 @@
   border-right: 1px solid #ffec99;
   display: flex;
   align-items: center;
+  transition: 0.4s;
 }
-
 .navbar__item--active {
   background: #ffec99;
 }
-
 .navbar__item:hover {
   background: #ffec99;
 }
-
 .navbar__link {
-  padding-top: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
   width: 100%;
   font-family: var(--main-font);

@@ -1,0 +1,15 @@
+.message {
+  font-family: var(--main-font);
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 2rem;
+  width: 100%;
+}
+.success {
+  background: #94d82d;
+  color: #ffffff;
+}
+.danger {
+  background: #fa5252;
+  color: #ffffff;
+}
