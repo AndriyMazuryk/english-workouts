@@ -87,7 +87,7 @@ const Register = () => {
 
   return (
     <>
-      <h3 class="page-title">Registration</h3>
+      <h3 className="page-title">Registration</h3>
       <Form onSubmit={handleRegister} ref={form} className="form">
         {!successful && (
           <div className="form__wrapper">
