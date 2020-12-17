@@ -23,8 +23,8 @@ const Header = () => {
           </div>
           {currentUser ? (
             <div className="header__account">
-              <Link to="/profile">{currentUser.username}</Link>
-              <Link to="/login" onClick={logOut}>
+              <Link to="/profile" className="header__link">{currentUser.username}</Link>
+              <Link to="/login" onClick={logOut} className="header__link">
                 LogOut
               </Link>
             </div>
